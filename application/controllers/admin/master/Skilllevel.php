@@ -11,6 +11,20 @@ class Skilllevel extends CI_Controller {
 		$this->load->view('admin/layout/wrapper', $data, FALSE);
 	}
 
+	public function tambah()
+	{
+		$data = array(	'title' 	=> 'Tambah Skill Level',
+					  	'isi'	  	=> 'admin/master/skilllevel/tambah');
+		$this->load->view('admin/layout/wrapper', $data, FALSE);
+	}
+
+	public function edit()
+	{
+		$data = array(	'title' 	=> 'Edit Skill Level',
+					  	'isi'	  	=> 'admin/master/skilllevel/edit');
+		$this->load->view('admin/layout/wrapper', $data, FALSE);
+	}
+
 }
 
 /* End of file Dasbor.php */

@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>AdminLTE 3 | Registration Page</title>
+  <title><?php echo $title ?></title>
 
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -45,7 +45,7 @@
 
         <div class="form-group">
           <!-- <label for="inputDescription">Address</label> -->
-          <textarea id="inputDescription" class="form-control" rows="4" placeholder="Address"></textarea>
+          <textarea id="inputDescription" class="form-control" rows="3" placeholder="Address"></textarea>
         </div>
         <div class="form-group">
           <label>Birth of Date</label>
@@ -53,6 +53,15 @@
         </div>
         <div class="form-group">
           <input type="email" class="form-control" id="emailuser" placeholder="Email">
+        </div>
+
+        <div class="input-group mb-3">
+          <input type="password" class="form-control" placeholder="Password">
+          <div class="input-group-append">
+            <div class="input-group-text">
+              <span class="fas fa-lock"></span>
+            </div>
+          </div>
         </div>
 
         <div class="row">

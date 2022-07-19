@@ -11,6 +11,20 @@ class Skill extends CI_Controller {
 		$this->load->view('admin/layout/wrapper', $data, FALSE);
 	}
 
+	public function tambah()
+	{
+		$data = array(	'title' 	=> 'Tambah Skill',
+					  	'isi'	  	=> 'admin/master/skill/tambah');
+		$this->load->view('admin/layout/wrapper', $data, FALSE);
+	}
+
+	public function edit()
+	{
+		$data = array(	'title' 	=> 'Edit Skill',
+					  	'isi'	  	=> 'admin/master/skill/edit');
+		$this->load->view('admin/layout/wrapper', $data, FALSE);
+	}
+
 }
 
 /* End of file Dasbor.php */
