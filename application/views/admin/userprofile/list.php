@@ -85,17 +85,12 @@
                     <tr>
                       <!-- data one -->
                       <td><?php echo $no ?></td>
-                      <td><?php echo $userskills->skillID ?></td>
-                      <td><?php echo $userskills->skillLevelID ?></td>
-                      <td>
-                        <div class="progress progress-xs">
-                          <div class="progress-bar progress-bar-danger" style="width: 55%"></div>
-                        </div>
-                      </td>
+                      <td><?php echo $userskills->skillName ?></td>
+                      <td><?php echo $userskills->skillLevelName ?></td>
                       <td><span class="badge">
-                        <a href="<?php echo base_url('admin/userprofile/edit') ?>" class="btn btn-warning btn-xs"><i class="fa fa-edit"></i>Edit</a>
+                        <a href="<?php echo base_url('admin/userprofile/edit/'.$userskills->userSkillID) ?>" class="btn btn-warning btn-xs"><i class="fa fa-edit"></i>Edit</a>
 
-                      <a href="#" class="btn btn-danger btn-xs" onclick="return confirm('Yakin ingin hapus data ini?')"><i class="fa fa-trash"></i>Delete</a>
+                      <a href="<?php echo base_url('admin/userprofile/delete/'.$userskills->userSkillID) ?>" class="btn btn-danger btn-xs" onclick="return confirm('Yakin ingin hapus data ini?')"><i class="fa fa-trash"></i>Delete</a>
                     </span></td>
                     </tr>
                     <?php $no++; } ?>

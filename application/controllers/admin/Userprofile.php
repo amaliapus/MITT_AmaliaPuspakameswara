@@ -37,8 +37,8 @@ class Userprofile extends CI_Controller {
 		// Validasi input
 		$valid = $this->form_validation;
 
-		$valid->set_rules('skill','skill','required',
-			array('required' => '%s harus diisi'));
+		// $valid->set_rules('skill','skill','required',
+		// 	array('required' => '%s harus diisi'));
 
 
 		if($valid->run()===FALSE) {
@@ -53,11 +53,11 @@ class Userprofile extends CI_Controller {
 		// Masuk database
 		}else{
 			$i = $this->input;
-			$data = array(	'username' 		=> $i->post('username'),
+			$data = array(	
 						  	'skillID' 		=> $i->post('skillID'),
 							'skillLevelID' 	=> $i->post('skillLevelID')
 									);
-			$this->user_model->tambah($data);
+			$this->userprofile_model->tambah($data);
 			$this->session->set_flashdata('sukses', 'Data telah ditambah');
 			redirect(base_url('admin/userprofile'),'refresh');
 		}
@@ -65,11 +65,49 @@ class Userprofile extends CI_Controller {
 	}
 
 
-	public function edit()
+	public function edit($userSkillID)
 	{
-		$data = array(	'title' 	=> 'Edit Skill',
-					  	'isi'	  	=> 'admin/userprofile/edit');
+		// Ambil dari skill
+		$skill = $this->skill_model->listing();
+
+		// Ambil dari skill level
+		$skilllevel = $this->skilllevel_model->listing();
+
+		$userskills = $this->userprofile_model->detail($userSkillID);
+
+		// Validasi input
+		$valid = $this->form_validation;
+
+		if($valid->run()===FALSE) {
+		// End validasi
+
+		$data = array(	'title' 		=> 'Edit Skill',
+						'skill'	  		=> $skill,	
+						'skilllevel'  	=> $skilllevel,
+						'userskills'  	=> $userskills,
+					  	'isi'	  		=> 'admin/userprofile/edit');
 		$this->load->view('admin/layout/wrapper', $data, FALSE);
+
+		// Masuk database
+		}else{
+			$i = $this->input;
+			$data = array(	'userSkillID' 	=> $userSkillID,
+							'skillName' 	=> $i->post('skillName')
+									);
+			$this->skill_model->edit($data);
+			$this->session->set_flashdata('Success', 'Data has been edited.');
+			redirect(base_url('admin/userprofile'),'refresh');
+		}
+		// End database
+	}
+
+	// Delete userskill
+	public function delete($userSkillID)
+	{
+		$data = array('userSkillID' => $userSkillID);
+		$this->userprofile_model->delete($data);
+		$this->session->set_flashdata('Success', 'Data has been deleted.');
+		redirect(base_url('admin/userprofile'),'refresh');
 	}
 
 }

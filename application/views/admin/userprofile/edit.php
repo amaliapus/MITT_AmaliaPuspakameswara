@@ -4,6 +4,13 @@
     <div class="row">
       <!-- left column -->
       <div class="col-md-6">
+        <?php
+          //notifikasi error
+          echo validation_errors('<div class="alert alert-warning">','</div>');
+          //form open
+          echo form_open(base_url('admin/userprofile/skill/' .$userskills->userSkillID),' 
+            class="form-horizontal"');
+        ?>
         <!-- general form elements -->
         <div class="card card-primary">
           <div class="card-header">
@@ -15,15 +22,23 @@
             <div class="card-body">
               <div class="form-group">
                 <label for="skill">Skill</label>
-                <input type="text" class="form-control" id="skill" placeholder="skill">
+                <select name="skillID" class="form-control select2" style="width: 100%;">
+                  <?php foreach($skill as $skill) { ?>
+                    <option value="<?php echo $skill->skillID ?>" <?php if($userskills->skillID==$skill->skillID) { echo "selected"; } ?>>
+                          <?php echo $skill->skillName ?>
+                       </option>
+                    <?php } ?>
+                </select>
               </div>
               <div class="form-group">
                 <label class="col-md-2 control-label">Skill Level</label>
-                <select class="form-control select2" style="width: 100%;">
-                    <option selected="selected">Beginner</option>
-                    <option>Intermediate</option>
-                    <option>Expert</option>
-                  </select>
+                <select name="skillLevelID" class="form-control select2" style="width: 100%;">
+                  <?php foreach($skilllevel as $skilllevel) { ?>
+                    <option value="<?php echo $skilllevel->skillLevelID ?>" <?php if($userskills->skillLevelID==$skilllevel->skillLevelID) { echo "selected"; } ?>>
+                          <?php echo $skilllevel->skillLevelName ?>
+                       </option>
+                    <?php } ?>
+                </select>
               </div>
             </div>
             <!-- /.card-body -->
@@ -39,3 +54,5 @@
   </section>
   <!-- /.content -->
 </div>
+
+ <?php echo form_close(); ?>
