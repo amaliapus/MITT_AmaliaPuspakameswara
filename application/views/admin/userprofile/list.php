@@ -1,5 +1,5 @@
 <!-- Main content -->
-    <section class="content">
+    <section class="content" id="userskills">
       <div class="row">
         <div class="col-md-6">
           <div class="card card-primary">
@@ -16,16 +16,16 @@
             </div>
             <div class="card-body">
               <div class="form-group">
-                <label for="inputName">Name</label>
-                <input type="name" class="form-control" id="nameuser" placeholder="Name" value="<?php echo $userprofile->name ?>" required>
+                <label>Name</label>
+                <input type="name" class="form-control" id="nameuser" placeholder="Name">
               </div>
               <div class="form-group">
                 <label>Password</label>
-                <input type="password" class="form-control" id="passworduser" placeholder="Password" value="<?php echo $userprofile->password ?>" required>
+                <input type="password" class="form-control" id="passworduser" placeholder="Password">
               </div>
               <div class="form-group">
-                <label >Address</label>
-                <textarea name="address" class="form-control" rows="4" value="<?php echo $userprofile->address ?>"></textarea>
+                <label>Address</label>
+                <textarea id="inputDescription" class="form-control" rows="4"></textarea>
               </div>
               <!-- <div class="form-group">
                 <label for="inputStatus">Status</label>
@@ -38,11 +38,11 @@
               </div> -->
               <div class="form-group">
                 <label>Birth of Date</label>
-                <input type="date" class="form-control" name="bod" value="<?php echo $userprofile->password ?>" required>
+                <input type="date" class="form-control" id="boduser">
               </div>
               <div class="form-group">
                 <label>Email</label>
-                <input type="email" class="form-control" name="email" placeholder="Email" value="<?php echo $userprofile->password ?>" required>
+                <input type="email" class="form-control" id="emailuser" placeholder="Email">
               </div>
             </div>
             <!-- /.card-body -->
@@ -55,7 +55,7 @@
         </div>
 
           <!-- /.col -->
-          <div class="col-md-6">
+          <div class="col-md-6" id="userskills">
             <div class="card">
               <div class="card-header">
                 <h3 class="card-title">User Skills</h3>
@@ -81,10 +81,12 @@
                   </thead>
                   <!-- start -->
                   <tbody>
+                    <?php $no=1; foreach($userskills as $userskills){ ?>
                     <tr>
                       <!-- data one -->
-                      <td>1.</td>
-                      <td>Update software</td>
+                      <td><?php echo $no ?></td>
+                      <td><?php echo $userskills->skillID ?></td>
+                      <td><?php echo $userskills->skillLevelID ?></td>
                       <td>
                         <div class="progress progress-xs">
                           <div class="progress-bar progress-bar-danger" style="width: 55%"></div>
@@ -96,48 +98,7 @@
                       <a href="#" class="btn btn-danger btn-xs" onclick="return confirm('Yakin ingin hapus data ini?')"><i class="fa fa-trash"></i>Delete</a>
                     </span></td>
                     </tr>
-                    <tr>
-                      <td>2.</td>
-                      <td>Clean database</td>
-                      <td>
-                        <div class="progress progress-xs">
-                          <div class="progress-bar bg-warning" style="width: 70%"></div>
-                        </div>
-                      </td>
-                      <td><span class="badge">
-                        <a href="#" class="btn btn-warning btn-xs"><i class="fa fa-edit"></i>Edit</a>
-
-                        <a href="#" class="btn btn-danger btn-xs" onclick="return confirm('Yakin ingin hapus data ini?')"><i class="fa fa-trash"></i>Delete</a>
-                      </span></td>
-                    </tr>
-                    <tr>
-                      <td>3.</td>
-                      <td>Cron job running</td>
-                      <td>
-                        <div class="progress progress-xs progress-striped active">
-                          <div class="progress-bar bg-primary" style="width: 30%"></div>
-                        </div>
-                      </td>
-                      <td><span class="badge">
-                        <a href="#" class="btn btn-warning btn-xs"><i class="fa fa-edit"></i>Edit</a>
-
-                        <a href="#" class="btn btn-danger btn-xs" onclick="return confirm('Yakin ingin hapus data ini?')"><i class="fa fa-trash"></i>Delete</a>
-                      </span></td>
-                    </tr>
-                    <tr>
-                      <td>4.</td>
-                      <td>Fix and squish bugs</td>
-                      <td>
-                        <div class="progress progress-xs progress-striped active">
-                          <div class="progress-bar bg-success" style="width: 90%"></div>
-                        </div>
-                      </td>
-                      <td><span class="badge">
-                        <a href="#" class="btn btn-warning btn-xs"><i class="fa fa-edit"></i>Edit</a>
-
-                        <a href="#" class="btn btn-danger btn-xs" onclick="return confirm('Yakin ingin hapus data ini?')"><i class="fa fa-trash"></i>Delete</a>
-                      </span></td>
-                    </tr>
+                    <?php $no++; } ?>
                   </tbody>
                 </table>
               </div>

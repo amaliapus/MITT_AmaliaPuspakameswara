@@ -15,14 +15,22 @@
             <div class="card-body">
               <div class="form-group">
                 <label for="skill">Skill</label>
-                <input type="text" class="form-control" id="skill" placeholder="skill">
+                <select class="form-control select2" style="width: 100%;">
+                    <?php foreach($skill as $skill) { ?>
+                      <option value="<?php echo $skill->skillID ?>" >
+                        <?php echo $skill->skillName ?>
+                      </option>
+                    <?php } ?>
+                  </select>
               </div>
               <div class="form-group">
                 <label class="col-md-2 control-label">Skill Level</label>
                 <select class="form-control select2" style="width: 100%;">
-                    <option selected="selected">Beginner</option>
-                    <option>Intermediate</option>
-                    <option>Expert</option>
+                    <?php foreach($skilllevel as $skilllevel) { ?>
+                      <option value="<?php echo $skilllevel->skillLevelID ?>" >
+                        <?php echo $skilllevel->skillLevelName ?>
+                      </option>
+                    <?php } ?>
                   </select>
               </div>
             </div>
