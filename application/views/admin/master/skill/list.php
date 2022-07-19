@@ -14,6 +14,14 @@
                     <i class="fa fa-plus"></i> Add New
                   </a>
                 </p>
+                <?php
+                //notifikasi
+                  if($this->session->flashdata('success')) {
+                    echo '<p class="alert alert-success">';
+                    echo $this->session->flashdata('success');
+                    echo '</div>';
+                  }
+                ?>
                 <table id="example2" class="table table-bordered table-hover">
                   <thead>
                   <tr>
@@ -24,18 +32,20 @@
                   </tr>
                   </thead>
                   <tbody>
+                    <?php $no=1; foreach($skill as $skill){ ?>
                   <tr>
-                    <td>1</td>
-                    <td>Internet
-                      Explorer 4.0
-                    </td>
-                    <td>Win 95+</td>
-                    <td><span class="badge">
-                        <a href="<?php echo base_url('admin/master/skill/edit') ?>" class="btn btn-warning btn-xs"><i class="fa fa-edit"></i>Edit</a>
+                    <td><?php echo $no ?></td>
+                    <td><?php echo $skill->skillID ?></td>
+                    <td><?php echo $skill->skillName ?></td>
+                    <td>
+                      <span class="badge">
+                        <a href="<?php echo base_url('admin/master/skill/edit/' .$skill->skillID) ?>" class="btn btn-warning btn-xs"><i class="fa fa-edit"></i>Edit</a>
 
-                      <a href="#" class="btn btn-danger btn-xs" onclick="return confirm('Yakin ingin hapus data ini?')"><i class="fa fa-trash"></i>Delete</a>
-                    </span></td>
+                      <a href="<?php echo base_url('admin/master/skill/delete/' .$skill->skillID) ?>" class="btn btn-danger btn-xs" onclick="return confirm('Yakin ingin hapus data ini?')"><i class="fa fa-trash"></i>Delete</a>
+                    </span>
+                  </td>
                   </tr>
+                  <?php $no++; } ?>
                   </tbody>
                 </table>
               </div>

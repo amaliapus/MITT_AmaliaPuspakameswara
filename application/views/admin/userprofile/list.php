@@ -17,15 +17,15 @@
             <div class="card-body">
               <div class="form-group">
                 <label for="inputName">Name</label>
-                <input type="name" class="form-control" id="nameuser" placeholder="Name">
+                <input type="name" class="form-control" id="nameuser" placeholder="Name" value="<?php echo $userprofile->name ?>" required>
               </div>
               <div class="form-group">
                 <label>Password</label>
-                <input type="password" class="form-control" id="passworduser" placeholder="Password">
+                <input type="password" class="form-control" id="passworduser" placeholder="Password" value="<?php echo $userprofile->password ?>" required>
               </div>
               <div class="form-group">
-                <label for="inputDescription">Address</label>
-                <textarea id="inputDescription" class="form-control" rows="4"></textarea>
+                <label >Address</label>
+                <textarea name="address" class="form-control" rows="4" value="<?php echo $userprofile->address ?>"></textarea>
               </div>
               <!-- <div class="form-group">
                 <label for="inputStatus">Status</label>
@@ -38,11 +38,11 @@
               </div> -->
               <div class="form-group">
                 <label>Birth of Date</label>
-                <input type="date" class="form-control" id="boduser">
+                <input type="date" class="form-control" name="bod" value="<?php echo $userprofile->password ?>" required>
               </div>
               <div class="form-group">
                 <label>Email</label>
-                <input type="email" class="form-control" id="emailuser" placeholder="Email">
+                <input type="email" class="form-control" name="email" placeholder="Email" value="<?php echo $userprofile->password ?>" required>
               </div>
             </div>
             <!-- /.card-body -->

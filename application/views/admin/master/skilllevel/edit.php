@@ -4,6 +4,13 @@
     <div class="row">
       <!-- left column -->
       <div class="col-md-6">
+        <?php
+          //notifikasi error
+          echo validation_errors('<div class="alert alert-warning">','</div>');
+          //form open
+          echo form_open(base_url('admin/master/skilllevel/edit/' .$skilllevel->skillLevelID),' 
+            class="form-horizontal"');
+        ?>
         <!-- general form elements -->
         <div class="card card-primary">
           <div class="card-header">
@@ -14,8 +21,8 @@
           <form>
             <div class="card-body">
               <div class="form-group">
-                <label for="skill">Skill Level Name</label>
-                <input type="text" class="form-control" id="skill" placeholder="skill">
+                <label for="skilllevel">Skill Level Name</label>
+                <input type="text" class="form-control" name="skillLevelName" placeholder="skill level Name" value="<?php echo $skilllevel->skillLevelName ?>" required>
               </div>
             </div>
             <!-- /.card-body -->
@@ -30,3 +37,5 @@
   </section>
   <!-- /.content -->
 </div>
+
+<?php echo form_close(); ?>

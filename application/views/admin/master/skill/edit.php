@@ -4,6 +4,13 @@
     <div class="row">
       <!-- left column -->
       <div class="col-md-6">
+        <?php
+          //notifikasi error
+          echo validation_errors('<div class="alert alert-warning">','</div>');
+          //form open
+          echo form_open(base_url('admin/master/skill/edit/' .$skill->skillID),' 
+            class="form-horizontal"');
+        ?>
         <!-- general form elements -->
         <div class="card card-primary">
           <div class="card-header">
@@ -14,8 +21,8 @@
           <form>
             <div class="card-body">
               <div class="form-group">
-                <label for="skill">Skill Name</label>
-                <input type="text" class="form-control" id="skill" placeholder="skill">
+                <label>Skill Name</label>
+                <input type="text" class="form-control" name="skillName" placeholder="skill" value="<?php echo $skill->skillName ?>" required>
               </div>
             </div>
             <!-- /.card-body -->
@@ -30,3 +37,5 @@
   </section>
   <!-- /.content -->
 </div>
+
+<?php echo form_close(); ?>

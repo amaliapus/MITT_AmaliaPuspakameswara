@@ -18,24 +18,26 @@
                   <thead>
                   <tr>
                     <th>No.</th>
-                    <th>Skill ID</th>
-                    <th>Skill Name</th>
+                    <th>Skill Level ID</th>
+                    <th>Skill Level Name</th>
                     <th>Action</th>
                   </tr>
                   </thead>
                   <tbody>
+                    <?php $no=1; foreach($skilllevel as $skilllevel){ ?>
                   <tr>
-                    <td>1</td>
-                    <td>Internet
-                      Explorer 4.0
-                    </td>
-                    <td>Win 95+</td>
-                    <td><span class="badge">
-                        <a href="<?php echo base_url('admin/master/skilllevel/edit') ?>" class="btn btn-warning btn-xs"><i class="fa fa-edit"></i>Edit</a>
+                    <td><?php echo $no ?></td>
+                    <td><?php echo $skilllevel->skillLevelID ?></td>
+                    <td><?php echo $skilllevel->skillLevelName ?></td>
+                    <td>
+                      <span class="badge">
+                        <a href="<?php echo base_url('admin/master/skilllevel/edit/' .$skilllevel->skillLevelID) ?>" class="btn btn-warning btn-xs"><i class="fa fa-edit"></i>Edit</a>
 
-                      <a href="#" class="btn btn-danger btn-xs" onclick="return confirm('Yakin ingin hapus data ini?')"><i class="fa fa-trash"></i>Delete</a>
-                    </span></td>
+                      <a href="<?php echo base_url('admin/master/skilllevel/delete/' .$skilllevel->skillLevelID) ?>" class="btn btn-danger btn-xs" onclick="return confirm('Yakin ingin hapus data ini?')"><i class="fa fa-trash"></i>Delete</a>
+                    </span>
+                  </td>
                   </tr>
+                  <?php $no++; } ?>
                   </tbody>
                 </table>
               </div>
