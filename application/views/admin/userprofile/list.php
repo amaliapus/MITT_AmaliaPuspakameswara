@@ -61,13 +61,11 @@
                 <h3 class="card-title">User Skills</h3>
 
                 <div class="card-tools">
-                  <ul class="pagination pagination-sm float-right">
-                    <li class="page-item"><a class="page-link" href="#">&laquo;</a></li>
-                    <li class="page-item"><a class="page-link" href="#">1</a></li>
-                    <li class="page-item"><a class="page-link" href="#">2</a></li>
-                    <li class="page-item"><a class="page-link" href="#">3</a></li>
-                    <li class="page-item"><a class="page-link" href="#">&raquo;</a></li>
-                  </ul>
+                  <p>
+                    <a href="<?php echo base_url('admin/userprofile/tambah') ?>" class="btn btn-success ">
+                      <i class="fa fa-plus"></i> Tambah Baru
+                    </a>
+                  </p>
                 </div>
               </div>
               <!-- /.card-header -->
@@ -77,13 +75,14 @@
                     <tr>
                       <th style="width: 10px">No.</th>
                       <th>Skill</th>
-                      <th>Progress</th>
-                      <th style="width: 40px">Level</th>
-                      <th>Action</th>
+                      <th>Level</th>
+                      <th style="width: 40px">Action</th>
                     </tr>
                   </thead>
+                  <!-- start -->
                   <tbody>
                     <tr>
+                      <!-- data one -->
                       <td>1.</td>
                       <td>Update software</td>
                       <td>
@@ -91,7 +90,11 @@
                           <div class="progress-bar progress-bar-danger" style="width: 55%"></div>
                         </div>
                       </td>
-                      <td><span class="badge bg-danger">55%</span></td>
+                      <td><span class="badge">
+                        <a href="<?php echo base_url('admin/userprofile/edit') ?>" class="btn btn-warning btn-xs"><i class="fa fa-edit"></i>Edit</a>
+
+                      <a href="#" class="btn btn-danger btn-xs" onclick="return confirm('Yakin ingin hapus data ini?')"><i class="fa fa-trash"></i>Hapus</a>
+                    </span></td>
                     </tr>
                     <tr>
                       <td>2.</td>
@@ -101,7 +104,11 @@
                           <div class="progress-bar bg-warning" style="width: 70%"></div>
                         </div>
                       </td>
-                      <td><span class="badge bg-warning">70%</span></td>
+                      <td><span class="badge">
+                        <a href="#" class="btn btn-warning btn-xs"><i class="fa fa-edit"></i>Edit</a>
+
+                        <a href="#" class="btn btn-danger btn-xs" onclick="return confirm('Yakin ingin hapus data ini?')"><i class="fa fa-trash"></i>Hapus</a>
+                      </span></td>
                     </tr>
                     <tr>
                       <td>3.</td>
@@ -111,7 +118,11 @@
                           <div class="progress-bar bg-primary" style="width: 30%"></div>
                         </div>
                       </td>
-                      <td><span class="badge bg-primary">30%</span></td>
+                      <td><span class="badge">
+                        <a href="#" class="btn btn-warning btn-xs"><i class="fa fa-edit"></i>Edit</a>
+
+                        <a href="#" class="btn btn-danger btn-xs" onclick="return confirm('Yakin ingin hapus data ini?')"><i class="fa fa-trash"></i>Hapus</a>
+                      </span></td>
                     </tr>
                     <tr>
                       <td>4.</td>
@@ -121,7 +132,11 @@
                           <div class="progress-bar bg-success" style="width: 90%"></div>
                         </div>
                       </td>
-                      <td><span class="badge bg-success">90%</span></td>
+                      <td><span class="badge">
+                        <a href="#" class="btn btn-warning btn-xs"><i class="fa fa-edit"></i>Edit</a>
+
+                        <a href="#" class="btn btn-danger btn-xs" onclick="return confirm('Yakin ingin hapus data ini?')"><i class="fa fa-trash"></i>Hapus</a>
+                      </span></td>
                     </tr>
                   </tbody>
                 </table>

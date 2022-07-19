@@ -5,7 +5,7 @@
     <!-- Brand Logo -->
     <a href="<?php echo base_url() ?>admin/dasbor" class="brand-link">
       <img src="<?php echo base_url() ?>assets/admin/dist/img/AdminLTELogo.png" alt="Admin Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
-      <span class="brand-text font-weight-light">Mandiri</span>
+      <span class="brand-text font-weight-light">Mandiri Inhealth</span>
     </a>
 
   <!-- Sidebar Menu -->
@@ -26,7 +26,7 @@
 
       <li class="nav-item">
         <a href="<?php echo base_url() ?>admin/userprofile" class="nav-link">
-          <i class="nav-icon fas fa-clock"></i>
+          <i class="nav-icon fas fa-user"></i>
           <p>
             User Profile
           </p>
@@ -58,17 +58,6 @@
           </li>
         </ul>
       </li>
-
-      <li class="nav-item">
-        <a href="#" class="nav-link">
-          <i class="nav-icon fas fa-edit"></i>
-          <p>
-            Review
-          </p>
-        </a>
-      </li>
-
-      
     </ul>
   </nav>
   <!-- /.sidebar-menu -->
@@ -82,16 +71,7 @@
 <section class="content-header">
   <div class="container-fluid">
     <div class="row mb-2">
-      <div class="col-sm-6">
-        <h1>Fixed Layout</h1>
-      </div>
-      <div class="col-sm-6">
-        <ol class="breadcrumb float-sm-right">
-          <li class="breadcrumb-item"><a href="#">Home</a></li>
-          <li class="breadcrumb-item"><a href="#">Layout</a></li>
-          <li class="breadcrumb-item active">Fixed Layout</li>
-        </ol>
-      </div>
+      
     </div>
   </div><!-- /.container-fluid -->
 </section>
