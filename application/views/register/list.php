@@ -44,7 +44,7 @@ echo form_open(base_url('register'), ' class="form-horizontal"');
           </div>
         </div>
         <div class="input-group mb-3">
-          <input type="text" class="form-control" name="name" placeholder="Name" value="<?php echo set_value('name') ?>" required>
+          <input type="text" class="form-control" name="name" placeholder="Name" id="name" required>
           <div class="input-group-append">
             <div class="input-group-text">
               <span class="fas fa-envelope"></span>
@@ -53,24 +53,24 @@ echo form_open(base_url('register'), ' class="form-horizontal"');
         </div>
 
         <div class="form-group">
-          <textarea name="address" class="form-control" rows="3" placeholder="Address" value="<?php echo set_value('address') ?>"></textarea>
+          <textarea name="address" class="form-control" rows="3" placeholder="Address" id="address"></textarea>
         </div>
         <div class="form-group">
           <label>Birth of Date</label>
-          <input type="date" class="form-control" name="bod" value="<?php echo set_value('bod') ?>" >
+          <input type="date" class="form-control" name="bod" id="bod" >
         </div>
         <div class="form-group">
-          <input type="email" class="form-control" name="email" placeholder="Email" value="<?php echo set_value('email') ?>" required>
+          <input type="email" class="form-control" name="email" placeholder="Email" id="email" required>
         </div>
 
-        <div class="input-group mb-3">
+        <!-- <div class="input-group mb-3">
           <input type="password" class="form-control" name="password" placeholder="Password" value="<?php echo set_value('password') ?>" required>
           <div class="input-group-append">
             <div class="input-group-text">
               <span class="fas fa-lock"></span>
             </div>
           </div>
-        </div>
+        </div> -->
 
         <div class="row">
           <div class="col-8">
