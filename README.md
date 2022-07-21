@@ -1,9 +1,9 @@
 # MITT_AmaliaPuspakameswara
 ## Documentation
 <img width="955" alt="image" src="https://user-images.githubusercontent.com/89831022/179829885-b9fec8c4-1723-457f-958f-0f5a5ab38b5f.png">
-<img width="960" alt="image" src="https://user-images.githubusercontent.com/89831022/180329006-24070902-94cb-434b-9dbd-f48bbe61b039.png">
-<img width="960" alt="image" src="https://user-images.githubusercontent.com/89831022/180329031-163d4f3c-1814-4f46-a219-4010f7865fc0.png">
-<img width="960" alt="image" src="https://user-images.githubusercontent.com/89831022/180329054-25e860ba-b685-4ded-b88b-c2636fb00aa2.png">
+<img width="960" alt="image" src="https://user-images.githubusercontent.com/89831022/180331776-e9bc4d8a-69d7-4126-b620-10dc3efb2721.png">
+<img width="960" alt="image" src="https://user-images.githubusercontent.com/89831022/180331783-96998792-d1d1-46e4-aca6-579dc2ed076b.png">
+<img width="960" alt="image" src="https://user-images.githubusercontent.com/89831022/180331844-4907cc60-aa8d-4ef2-8b61-b4534c44fd20.png">
 <img width="960" alt="image" src="https://user-images.githubusercontent.com/89831022/179829935-d7bb9ea7-2ae8-4af7-9ebb-48a3574d725f.png">
 <img width="960" alt="image" src="https://user-images.githubusercontent.com/89831022/179830041-79e93e45-eaab-44a5-bdd8-592c2c9bc2ab.png">
 <img width="960" alt="image" src="https://user-images.githubusercontent.com/89831022/179830537-38494803-95a3-4d3f-846d-29be6e0d3dd3.png">
