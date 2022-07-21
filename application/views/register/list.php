@@ -34,9 +34,9 @@ echo form_open(base_url('register'), ' class="form-horizontal"');
     <div class="card-body register-card-body">
       <p class="login-box-msg">Register a new membership</p>
 
-      <form>
+      <form action="<?php echo base_url(); ?>" method="post">
         <div class="input-group mb-3">
-          <input type="text" class="form-control" name="username" placeholder="Username" value="<?php echo set_value('username') ?>" required>
+          <input type="text" class="form-control" name="username" placeholder="Username" value="<?php echo set_value('username'); ?>" id="username" required>
           <div class="input-group-append">
             <div class="input-group-text">
               <span class="fas fa-user"></span>
@@ -44,7 +44,7 @@ echo form_open(base_url('register'), ' class="form-horizontal"');
           </div>
         </div>
         <div class="input-group mb-3">
-          <input type="text" class="form-control" name="name" placeholder="Name" id="name" required>
+          <input type="text" class="form-control" name="name" placeholder="Name" value="<?php echo set_value('name'); ?>"id="name" required>
           <div class="input-group-append">
             <div class="input-group-text">
               <span class="fas fa-envelope"></span>
@@ -53,14 +53,14 @@ echo form_open(base_url('register'), ' class="form-horizontal"');
         </div>
 
         <div class="form-group">
-          <textarea name="address" class="form-control" rows="3" placeholder="Address" id="address"></textarea>
+          <textarea name="address" class="form-control" rows="3" placeholder="Address" value="<?php echo set_value('address'); ?>"id="address"></textarea>
         </div>
         <div class="form-group">
           <label>Birth of Date</label>
-          <input type="date" class="form-control" name="bod" id="bod" >
+          <input type="date" class="form-control" name="bod" value="<?php echo set_value('bod'); ?>" id="bod" >
         </div>
         <div class="form-group">
-          <input type="email" class="form-control" name="email" placeholder="Email" id="email" required>
+          <input type="email" class="form-control" name="email" placeholder="Email" value="<?php echo set_value('email'); ?>"id="email" required>
         </div>
 
         <!-- <div class="input-group mb-3">
