@@ -14,19 +14,45 @@
   <!-- Theme style -->
   <link rel="stylesheet" href="<?php echo base_url() ?>assets/admin/dist/css/adminlte.min.css">
 </head>
+
 <body class="hold-transition login-page">
 <div class="login-box">
   <div class="login-logo">
-    <a href="<?php echo base_url() ?>assets/admin/index2.html"><b>Mandiri</b>Inhealth</a>
+    <a href="#"><b>Mandiri</b>Inhealth</a>
   </div> 
   <!-- /.login-logo -->
   <div class="card">
     <div class="card-body login-card-body">
       <p class="login-box-msg">Sign in first</p>
-
-      <form action="../../index3.html" method="post">
+      <?php $this->load->helper('form'); ?>
+        <div class="row">
+            <div class="col-md-12">
+                <?php echo validation_errors('<div class="alert alert-danger alert-dismissable">', ' <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button></div>'); ?>
+            </div>
+        </div>
+        <?php
+        $this->load->helper('form');
+        $error = $this->session->flashdata('error');
+        if($error)
+        {
+            ?>
+            <div class="alert alert-danger alert-dismissable">
+                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                <?php echo $error; ?>                    
+            </div>
+        <?php }
+        $success = $this->session->flashdata('success');
+        if($success)
+        {
+            ?>
+            <div class="alert alert-success alert-dismissable">
+                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                <?php echo $success; ?>                    
+            </div>
+        <?php } ?>
+      <form action="<?php echo base_url(); ?>loginMe" method="post">
         <div class="input-group mb-3">
-          <input type="username" class="form-control" placeholder="Username">
+          <input type="username" class="form-control" id="username"placeholder="Username">
           <div class="input-group-append">
             <div class="input-group-text">
               <span class="fas fa-user"></span>
@@ -34,7 +60,7 @@
           </div>
         </div>
         <div class="input-group mb-3">
-          <input type="password" class="form-control" placeholder="Password">
+          <input type="password" class="form-control" id="password"placeholder="Password">
           <div class="input-group-append">
             <div class="input-group-text">
               <span class="fas fa-lock"></span>
